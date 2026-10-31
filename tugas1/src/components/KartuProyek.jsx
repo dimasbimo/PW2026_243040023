@@ -1,4 +1,4 @@
-// Props berisi informasi satu proyek dari App.
+// Props berisi informasi satu proyek dari App
 function KartuProyek({ judul, deskripsi, teknologi, repoUrl }) {
   return (
     <article className="kartu-proyek">
