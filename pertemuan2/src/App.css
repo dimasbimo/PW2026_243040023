@@ -1,0 +1,382 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: light;
+}
+
+#root {
+  width: 100%;
+  border: 0;
+  text-align: left;
+}
+
+body {
+  min-width: 320px;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(37, 99, 235, 0.22), transparent 32%),
+    radial-gradient(circle at 85% 85%, rgba(14, 165, 233, 0.16), transparent 28%),
+    #eef3fa;
+}
+
+.wadah {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  padding: 64px 24px 72px;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #1e293b;
+}
+
+.judul {
+  margin: 0 0 10px;
+  color: #172b4d;
+  font-size: clamp(34px, 7vw, 54px);
+  font-weight: 800;
+  letter-spacing: -1.8px;
+  line-height: 1.05;
+  text-align: center;
+  text-shadow: none;
+}
+
+.subjudul {
+  margin: 0 0 38px;
+  color: #64748b;
+  font-size: 15px;
+  letter-spacing: 0.2px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.kartu {
+  margin-bottom: 20px;
+  padding: 26px;
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid #e0e7f0;
+  border-radius: 18px;
+  box-shadow: 0 8px 28px rgba(35, 62, 101, 0.05);
+}
+
+.wadah > .kartu:first-of-type {
+  background: #e8efff;
+  border-color: #d1dffe;
+  text-align: center;
+}
+
+.wadah > .kartu:last-of-type {
+  margin-bottom: 0;
+}
+
+.kartu:has(.penghitung) .baris {
+  margin-top: 4px;
+}
+
+.kartu:has(.penghitung) .tombol-merah {
+  color: #38557d;
+  background: #fff;
+  box-shadow: none;
+}
+
+.kartu h2 {
+  margin: 0 0 18px;
+  color: #173a67;
+  font-size: 20px;
+  font-weight: 750;
+  letter-spacing: -0.4px;
+  line-height: 1.25;
+}
+
+.penghitung {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.penghitung p {
+  margin: 0;
+  color: #334155;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.penghitung .pesan-penghitung {
+  margin-top: -4px;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.baris {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.input {
+  min-width: 0;
+  flex: 1;
+  padding: 12px 14px;
+  color: #1e293b;
+  background: #f8fafc;
+  border: 1px solid #dbe3ef;
+  border-radius: 9px;
+  outline: none;
+  font: inherit;
+  font-size: 14px;
+  transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.input::placeholder {
+  color: #94a3b8;
+}
+
+.input:focus {
+  background: #fff;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.14);
+}
+
+.tombol,
+.tombol-filter {
+  border: 0;
+  border-radius: 9px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  line-height: 1.2;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.tombol {
+  padding: 11px 17px;
+  color: #fff;
+  background: #1d4ed8;
+  box-shadow: 0 5px 12px rgba(29, 78, 216, 0.2);
+}
+
+.tombol:hover:not(:disabled),
+.tombol-filter:hover {
+  transform: translateY(-1px);
+}
+
+.tombol:hover:not(:disabled) {
+  background: #1e40af;
+  box-shadow: 0 8px 16px rgba(29, 78, 216, 0.28);
+}
+
+.tombol:disabled {
+  color: #fff;
+  background: #cbd5e1;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.tombol-merah {
+  background: #e11d48;
+  box-shadow: 0 5px 12px rgba(225, 29, 72, 0.18);
+}
+
+.tombol-merah:hover:not(:disabled) {
+  background: #be123c;
+  box-shadow: 0 8px 16px rgba(225, 29, 72, 0.26);
+}
+
+.tombol-kecil {
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.daftar {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 12px;
+  border-bottom: 1px solid #e8eef5;
+  text-align: left;
+}
+
+.item:first-child {
+  padding-top: 18px;
+}
+
+.item:hover {
+  background: #f8faff;
+  border-radius: 10px;
+}
+
+.item:has(input:checked) {
+  background: #f4faf7;
+}
+
+.item .tombol-merah {
+  color: #b42343;
+  background: #fff1f3;
+  box-shadow: none;
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+.item input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 auto;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+.item span {
+  min-width: 0;
+  flex: 1;
+  color: #334155;
+  font-size: 14px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.selesai {
+  color: #94a3b8 !important;
+  text-decoration: line-through;
+}
+
+.ringkasan {
+  display: inline-block;
+  margin: 0 0 16px;
+  padding: 6px 10px;
+  color: #475569;
+  background: #f1f5f9;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.filter-tombol {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.tombol-filter {
+  padding: 8px 13px;
+  color: #475569;
+  background: #fff;
+  border: 1px solid #dbe3ef;
+  font-size: 13px;
+}
+
+.tombol-filter.aktif {
+  color: #fff;
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+  box-shadow: 0 5px 12px rgba(29, 78, 216, 0.2);
+}
+
+.daftar + .tombol-merah,
+.kosong + .tombol-merah {
+  display: block;
+  margin-top: 20px;
+  margin-left: auto;
+}
+
+.kosong {
+  margin: 26px 0;
+  color: #64748b;
+  font-size: 14px;
+  font-style: italic;
+  text-align: center;
+  padding: 32px 16px;
+  background: #f7f9fc;
+  border: 1px dashed #ccd8e8;
+  border-radius: 12px;
+}
+
+button:focus-visible {
+  outline: 3px solid #60a5fa;
+  outline-offset: 4px;
+}
+
+@media (min-width: 760px) {
+  .wadah {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 24px;
+  }
+
+  .judul,
+  .subjudul,
+  .wadah > .kartu:last-of-type {
+    grid-column: 1 / -1;
+  }
+
+  .judul {
+    margin-bottom: -12px;
+    font-size: 46px;
+  }
+
+  .subjudul {
+    margin-bottom: 12px;
+  }
+
+  .kartu {
+    margin: 0;
+    padding: 28px;
+  }
+
+  .kartu:has(form) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
+
+.galat {
+  margin: 8px 0 0;
+  color: #e11d48;
+  font-size: 13px;
+  text-align: left;
+}
+
+@media (max-width: 560px) {
+  .wadah {
+    padding: 40px 16px 52px;
+  }
+
+  .kartu {
+    padding: 20px 16px;
+    border-radius: 15px;
+  }
+
+  .baris {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .baris .tombol {
+    width: 100%;
+  }
+
+  .item {
+    gap: 9px;
+  }
+}
